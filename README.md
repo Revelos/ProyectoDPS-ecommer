@@ -10,7 +10,7 @@ El siguiente proyecto consistirá en la creación de una aplicación para una ti
 ## Guia de instalacion🛠⚙️
 Antes de empezar asegurece de tener instalado:
 * [Node.js] https://nodejs.org/es/download/
-* Expo-CLI (Lo puede instalar ejecutando el siguiente comando desde una CMD >npm install --global expo-cli )
+* Expo-CLI (Lo puede instalar ejecutando el siguiente comando desde una CMD > npm install --global expo-cli )
  
 
 ## Autores ✒️
