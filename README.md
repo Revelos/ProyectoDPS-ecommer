@@ -8,7 +8,10 @@ El siguiente proyecto consistirá en la creación de una aplicación para una ti
 [Segunda Entrega]
 
 ## Guia de instalacion🛠⚙️
-[Segunda Entrega]
+Antes de empezar asegurece de tener instalado:
+* [Node.js] https://nodejs.org/es/download/
+* Expo-CLI (Lo puede instalar ejecutando el siguiente comando desde una CMD >npm install --global expo-cli )
+ 
 
 ## Autores ✒️
 
@@ -29,8 +32,6 @@ El siguiente proyecto consistirá en la creación de una aplicación para una ti
 * [Enlace a Manual_Técnico] https://mega.nz/file/4dcVmarD#xK0lPI_g1y6O8MHhfhIMu7YDF0r6UlXZ35I9pQUfp9g
 
 ## Licencia 📄
-
-
 
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">licencia de Creative Commons Reconocimiento-NoComercial 4.0 Internacional</a>.
