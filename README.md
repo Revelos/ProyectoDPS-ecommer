@@ -1,5 +1,5 @@
 # ProyectoDPS-ecommer
-Proyecto de catedra de Desarrollo de Aplicaciones Multiplataforma
+ Proyecto de catedra de Desarrollo de Aplicaciones Multiplataforma
 
 ## Autores ✒️
 
