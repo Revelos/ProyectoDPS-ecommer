@@ -1,5 +1,5 @@
 # ProyectoDPS-ecommer
-Proyecto de catedra de Desarrollo de Aplicaciones Multiplataforma
+ Proyecto de catedra de Desarrollo de Aplicaciones Multiplataforma
 
 ## Descripcion y Contexto
 El siguiente proyecto consistirá en la creación de una aplicación para una tienda online, donde el usuario podrá ingresar algunos datos personales para poder realizar una compra, al igual que una simulación de la inserción de su tarjeta para posteriormente mostrar un mensaje confirmación de la compra. Se buscará la manera que este proceso sea fácil, entendible y que el usuario mantenga una interacción amigable y practica con la aplicación
