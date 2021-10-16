@@ -13,7 +13,7 @@ Antes de empezar asegurece de tener instalado:
 1) Seleccionar una carpeta de su equipo local donde clonará y almacenará el repositorio
 2) Una vez seleccionada la carpeta, abra "Git Bash" y ejecute el comando git clone https://github.com/Revelos/ProyectoDPS-ecommer.git Esto le permitirá conectarse de una vez al repositorio.
 3) Crear una rama de colaboración para poder agregar los cambios realizados a Github.
-4) Una vez este conectado al repositorio y haya creado su rama, puede comenzar a colaborar desde su equipo local, para lo que será necesario abrir el proyecto desde su Android Studio.
+4) Una vez este conectado al repositorio y haya creado su rama, puede comenzar a colaborar desde su equipo local, para lo que será necesario abrir el proyecto desde su editor de preferencia, Visual Studio o Sublime Text.
 5) Realice las modificaciones necesarias y ejecute los comandos: git add -A para agregar los cambios, git commit -m "comentario" y finalmente git push -u origin SuRama para agregar los cambios al repositorio remoto.
 6) Puede tambier el **manual tecnico**,  ***su link se encuentra abajo***
 
