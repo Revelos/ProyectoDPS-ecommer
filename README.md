@@ -23,7 +23,7 @@ Al tener nuestra aplicacion en nuestro equipo local abriremos una ventana CMD y 
 2) Una vez adentro escribimos ` npm install` o ` yarn install `
 3) Despues de haber descargado las depedencias y librerias, ejecutamos nuestro programa con el comando ` expo start `
 4) Esto te genera un codigo QR, el cual puedes usar con tu telefono fisico o simplemente si tienes un emulador instalado en tu PC puedes correrlo ahi
-5) Esta listo para usarse puedes ver el mannual de usuario, ###su link se encuentra abajo de este documento
+5) Esta listo para usarse puedes ver el mannual de usuario, ### su link se encuentra abajo de este documento
 
 ## Autores ✒️
 
