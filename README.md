@@ -14,7 +14,8 @@ Antes de empezar asegurece de tener instalado:
 2) Una vez seleccionada la carpeta, abra "Git Bash" y ejecute el comando git clone https://github.com/Revelos/ProyectoDPS-ecommer.git Esto le permitirá conectarse de una vez al repositorio.
 3) Crear una rama de colaboración para poder agregar los cambios realizados a Github.
 4) Una vez este conectado al repositorio y haya creado su rama, puede comenzar a colaborar desde su equipo local, para lo que será necesario abrir el proyecto desde su Android Studio.
-5)Realice las modificaciones necesarias y ejecute los comandos: git add -A para agregar los cambios, git commit -m "comentario" y finalmente git push -u origin SuRama para agregar los cambios al repositorio remoto.
+5) Realice las modificaciones necesarias y ejecute los comandos: git add -A para agregar los cambios, git commit -m "comentario" y finalmente git push -u origin SuRama para agregar los cambios al repositorio remoto.
+6) Puede tambier el **manual tecnico**,  ***su link se encuentra abajo***
 
 
 ## Guia de usuario👤
@@ -23,15 +24,15 @@ Al tener nuestra aplicacion en nuestro equipo local abriremos una ventana CMD y 
 2) Una vez adentro escribimos ` npm install` o ` yarn install `
 3) Despues de haber descargado las depedencias y librerias, ejecutamos nuestro programa con el comando ` expo start `
 4) Esto te genera un codigo QR, el cual puedes usar con tu telefono fisico o simplemente si tienes un emulador instalado en tu PC puedes correrlo ahi
-5) Esta listo para usarse puedes ver el mannual de usuario, ### su link se encuentra abajo de este documento
+5) Esta listo para usarse puedes ver el **mannual de usuario**, ***su link se encuentra abajo de este documento***
 
 ## Autores ✒️
 
-* **Luis Angel Arce Monterroza** 
-* **Ricardo Vladimir Crespin Bran** 
-* **Cristian Odir Lopez Revelo** 
-* **Sara Daniela García Aparicio**
-* **Rodrigo Enrique Flores Velásquez** 
+* **Luis Angel Arce Monterroza          AM191922** 
+* **Ricardo Vladimir Crespin Bran       CB180937** 
+* **Cristian Odir Lopez Revelo          LR161911** 
+* **Sara Daniela García Aparicio        GA190843**
+* **Rodrigo Enrique Flores Velásquez    FV180290** 
 
 ## Enlaces de interes🔗
 * [Enlace a Mockups] https://drive.google.com/file/d/1iGqeKCg0t6GMWw64v_xlqvHGkEQlwhkp/view?usp=drivesdk
