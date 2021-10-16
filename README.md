@@ -28,11 +28,11 @@ Al tener nuestra aplicacion en nuestro equipo local abriremos una ventana CMD y 
 
 ## Autores ✒️
 
-* **Luis Angel Arce Monterroza          AM191922** 
-* **Ricardo Vladimir Crespin Bran       CB180937** 
-* **Cristian Odir Lopez Revelo          LR161911** 
-* **Sara Daniela García Aparicio        GA190843**
-* **Rodrigo Enrique Flores Velásquez    FV180290** 
+* **Luis Angel Arce Monterroza           --AM191922** 
+* **Ricardo Vladimir Crespin Bran        --CB180937** 
+* **Cristian Odir Lopez Revelo           --LR161911** 
+* **Sara Daniela García Aparicio         --GA190843**
+* **Rodrigo Enrique Flores Velásquez     --FV180290** 
 
 ## Enlaces de interes🔗
 * [Enlace a Mockups] https://drive.google.com/file/d/1iGqeKCg0t6GMWw64v_xlqvHGkEQlwhkp/view?usp=drivesdk
