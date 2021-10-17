@@ -41,9 +41,9 @@ Al tener nuestra aplicacion en nuestro equipo local abriremos una ventana CMD y 
 
 * [Enlace al Video Explicativo] https://drive.google.com/file/d/1rPvQwjNDukbh97pYlCkNIvjoXMigJ6EZ/view?usp=sharing
 
-* [Enlace a Manual_Usuario] https://mega.nz/file/xUVVnSbL#V_2M9gHeah9RPp58JWJGOhBaW3Q-X-t96MSMDwZuiVc
+* [Enlace a Manual_Usuario] https://drive.google.com/file/d/1_359Nofr6dmQxTYpGUOGCKmVQU8EpC4a/view?usp=sharing
 
-* [Enlace a Manual_Técnico] https://mega.nz/file/4dcVmarD#xK0lPI_g1y6O8MHhfhIMu7YDF0r6UlXZ35I9pQUfp9g
+* [Enlace a Manual_Técnico] https://drive.google.com/file/d/1iUN93Em6yCcxpqGchlkYbBNbhLCIsBRE/view?usp=sharing
 
 ## Licencia 📄
 
