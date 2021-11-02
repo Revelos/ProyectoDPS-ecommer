@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
+import { StyleSheet, View, Text, Image,ScrollView } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import { Picker } from "@react-native-picker/picker";
-
+import KeyboardAvoidingWrapper from './../components/KeyboardAvoidingWrapper';
+import {StyledContainer,Background,InnerContainer} from './../components/styles';
 const itemHome = () => {
   const [selectedOption, setSelectedOption] = useState("relevante");
   return (
+    <ScrollView>
+    
     <View style={styles.container}>
       <View style={styles.pickerContainer}>
         <Text style={{ fontSize: 12 }}>Ordenar por </Text>
@@ -18,9 +21,43 @@ const itemHome = () => {
           <Picker.Item label="Precio" value="precio" />
         </Picker>
       </View>
+      
       <View style={styles.itemContainer}>
         <View style={styles.item}>
-          <Image source={require("../img/modelo1.jpg")} style={styles.img} />
+          <Image source={require("./../assets/img/modelo1.jpg")} style={styles.img} />
+          <View style={styles.itemdes}>
+            <Text style={{ fontSize: 12, fontWeight: "400" }}>Camisa #1</Text>
+            <Text style={{ fontSize: 12, fontWeight: "700" }}>USD $$</Text>
+            <View style={styles.rate}>
+           
+                <FontAwesome
+                style={styles.star}
+                name="star"
+                size={12}
+                color="yellow"/>
+              <FontAwesome
+                style={styles.star}
+                name="star"
+                size={12}
+                color="yellow"
+              />
+              <FontAwesome
+                style={styles.star}
+                name="star"
+                size={12}
+                color="yellow"
+              />
+              <FontAwesome
+                style={styles.star}
+                name="star"
+                size={12}
+                color="yellow"
+              />
+            </View>
+          </View>
+        </View>
+        <View style={styles.item}>
+          <Image source={require("./../assets/img/modelo2.png")} style={styles.img} />
           <View style={styles.itemdes}>
             <Text style={{ fontSize: 12, fontWeight: "400" }}>Camisa #1</Text>
             <Text style={{ fontSize: 12, fontWeight: "700" }}>USD $$</Text>
@@ -59,7 +96,35 @@ const itemHome = () => {
           </View>
         </View>
         <View style={styles.item}>
-          <Image source={require("../img/modelo1.jpg")} style={styles.img} />
+          <Image source={require("./../assets/img/modelo3.jpeg")} style={styles.img} />
+          <View style={styles.itemdes}>
+            <Text style={{ fontSize: 12, fontWeight: "400" }}>Camisa #1</Text>
+            <Text style={{ fontSize: 12, fontWeight: "700" }}>USD $$</Text>
+            <View style={styles.rate}>
+              <FontAwesome
+                style={styles.star}
+                name="star"
+                size={12}
+                color="yellow"
+              />
+              
+              <FontAwesome
+                style={styles.star}
+                name="star"
+                size={12}
+                color="yellow"
+              />
+              <FontAwesome
+                style={styles.star}
+                name="star"
+                size={12}
+                color="yellow"
+              />
+            </View>
+          </View>
+        </View>
+        <View style={styles.item}>
+          <Image source={require("./../assets/img/modelo4.jpg")} style={styles.img} />
           <View style={styles.itemdes}>
             <Text style={{ fontSize: 12, fontWeight: "400" }}>Camisa #2</Text>
             <Text style={{ fontSize: 12, fontWeight: "700" }}>USD $$</Text>
@@ -99,24 +164,30 @@ const itemHome = () => {
         </View>
       </View>
     </View>
+
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    
   },
   itemContainer: {
-    width: 130,
-    height: "80%",
+    width: 200,
+    height: 750,
     marginTop: 40,
-    marginLeft: 50,
+    marginLeft: 20,
+    backgroundColor: 'rgba(60,60,60,0.3)',
+    padding:10
   },
   item: {
     backgroundColor: "#fff",
     width: "100%",
-    height: 150,
-    marginTop: 40,
+    padding:3,
+    marginVertical: 10,
+    borderRadius: 5,
   },
   img: {
     width: 86,

@@ -6,8 +6,10 @@ import {
   SectionList,
   TouchableOpacity,
   CheckBox,
+  ScrollView
 } from "react-native";
-
+// keyboard avoiding view
+import KeyboardAvoidingWrapper from './../components/KeyboardAvoidingWrapper';
 const DATA = [
   {
     title: "Mujeres",
@@ -35,22 +37,28 @@ const Categorias = () => {
         keyExtractor={(item, index) => index.toString()}
         sections={DATA}
         renderItem={({ item }) => (
+        <ScrollView>
           <TouchableOpacity style={styles.item}>
             <Text style={{ marginRight: 20, fontSize: 12 }}>{item}</Text>
           </TouchableOpacity>
+          </ScrollView>
         )}
         renderSectionHeader={({ section }) => (
+        <ScrollView>
           <View style={styles.titulo}>
             <Text style={{ fontSize: 12, fontWeight: "700" }}>
               {section.title}
             </Text>
           </View>
+          </ScrollView>
         )}
       />
+      
       <View>
         <Text style={styles.separador}></Text>
       </View>
       <View style={styles.tallas}>
+      <ScrollView>
         <View>
           <Text style={{ fontSize: 15, fontWeight: "700" }}>Tallas</Text>
         </View>
@@ -86,6 +94,7 @@ const Categorias = () => {
           />
           <Text style={styles.label}>L</Text>
         </View>
+        </ScrollView>
       </View>
     </View>
   );
@@ -98,6 +107,8 @@ const styles = StyleSheet.create({
     height: 570,
     marginTop: 20,
     marginLeft: 8,
+    borderRadius: 10,
+    marginVertical:5,
   },
   sectionTitle: {
     textAlign: "center",

@@ -1,43 +1,43 @@
-import { StatusBar } from "expo-status-bar";
-import "react-native-gesture-handler";
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import { NavigationContainer } from "@react-navigation/native";
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import Home from "./screens/Home";
-import { FontAwesome } from "@expo/vector-icons";
+import React, { useState, useEffect } from 'react';
 
-const Drawer = createDrawerNavigator();
+// React navigation stack
+import RootStack from './navigators/RootStack';
 
+// apploading
+import AppLoading from 'expo-app-loading';
+
+// async-storage
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+// credentials context
+import { CredentialsContext } from './components/CredentialsContext';
+import  Splash  from './components/splash';
 export default function App() {
+  const [appReady, setAppReady] = useState(false);
+  const [storedCredentials, setStoredCredentials] = useState("");
+  
+    
+  
+  const checkLoginCredentials = () => {
+    AsyncStorage.getItem('Credentials')
+      .then((result) => {
+        if (result !== null) {
+          setStoredCredentials(JSON.parse(result));
+        } else {
+          setStoredCredentials(null);
+        }
+      })
+      .catch((error) => console.log(error));
+  };
+
+  if (!appReady) {
+    return <AppLoading startAsync={checkLoginCredentials} onFinish={() => setAppReady(true)} onError={console.warn} />;
+  }
+
   return (
-    <NavigationContainer>
-      <StatusBar style="auto" />
-      <Drawer.Navigator
-        initialRouteName="Home"
-        screenOptions={{
-          headerTitleAlign: "center",
-        }}
-      >
-        <Drawer.Screen
-          name="Home"
-          component={Home}
-          options={{
-            drawerIcon: () => (
-              <FontAwesome name="home" size={24} color="black" />
-            ),
-          }}
-        />
-      </Drawer.Navigator>
-    </NavigationContainer>
+    <CredentialsContext.Provider value={{ storedCredentials, setStoredCredentials }}>
+      
+      <RootStack />
+    </CredentialsContext.Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
