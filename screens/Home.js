@@ -19,7 +19,7 @@ export default function ScreenA() {
         <SearchBar />
       </View>
       <View style={styles.Body}>
-      
+          <Text>Esto se cambio desde el local</Text>
         <Categorias /> 
          
         <ScrollView>  
