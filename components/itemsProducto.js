@@ -56,14 +56,14 @@ const styles = StyleSheet.create({
     height: 50,
     marginTop: 0,
     marginLeft: 105,
-    backgroundColor: '#fff'
+    backgroundColor: 'blue'
   },
   itemContainer4: {
     width: 50,
     height: 50,
     marginTop: 0,
     marginLeft: 105,
-    backgroundColor: '#fff',
+    backgroundColor: 'red',
   },
   item: {
     backgroundColor: "#fff",
