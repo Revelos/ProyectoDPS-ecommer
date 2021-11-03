@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState,useEffect} from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import { FontAwesome, Octicons } from "@expo/vector-icons";
@@ -23,12 +23,33 @@ import {
   Colors,
 } from './styles';
 const { darkLight, brand, primary } = Colors;
-const SearchBar = () => {
+
+const SearchBar = ({descripcion}) => {
+  const [clave,setClave]=useState()
+  
+
+    const consultarProducto = async () => {
+     
+      const url = `http://192.168.1.14/APILogin/filtro.php?filtro=`+clave;
+    
+        try {
+          const respuesta = await fetch(url);
+          const resultado = await respuesta.json();
+          descripcion(resultado);
+           
+        } catch (error) {
+          console.log(error);
+        }
+    };
+    
+    
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.inputStyle}
+        value={clave}
         placeholder="Encuentra tu nuevo conjunto..."
+        onKeyPress={()=>consultarProducto()}
       />
 
 
@@ -39,17 +60,6 @@ const SearchBar = () => {
         color="black"
         style={{ marginRight: 5 }}
       />
-    </View>
-  );
-};
-
-const MyTextInput = ({ label, icon, ...props }) => {
-  return (
-    <View>
-      <RightIcon >
-        <Octicons name={icon} size={30} color={brand} />
-      </RightIcon>
-      <StyledInputLabel>{label}</StyledInputLabel>
     </View>
   );
 };

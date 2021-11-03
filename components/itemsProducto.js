@@ -18,7 +18,7 @@ const itemProducto = ({navigation}) => {
             </View>
           </View>
         </View>
-          <Text style={{ fontSize: 24, fontWeight: "700", marginTop: 60, textAlign: 'center'}}>Camisa #1</Text>
+          <Text style={{ fontSize: 24, fontWeight: "700", marginTop: 60, textAlign: 'center'}}>{navigation.getParam('nombre')}</Text>
           <Text style={{ fontSize: 20, fontWeight: "400", marginLeft: 15, textAlign: 'center' }}>Hermosa camisa con estampado Red Devils </Text>
           <TouchableOpacity style={styles.boton} onPress={() => {navigation.navigate('FormCompra')}} ><Text style={styles.textBoton}>Comprar</Text></TouchableOpacity>
         
@@ -33,7 +33,7 @@ const itemProducto = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
+  containers: {
     flex: 1,
   
   },
@@ -56,14 +56,14 @@ const styles = StyleSheet.create({
     height: 50,
     marginTop: 0,
     marginLeft: 105,
-    backgroundColor: '#fff'
+    backgroundColor: 'blue'
   },
   itemContainer4: {
     width: 50,
     height: 50,
     marginTop: 0,
     marginLeft: 105,
-    backgroundColor: '#fff',
+    backgroundColor: 'red',
   },
   item: {
     backgroundColor: "#fff",
