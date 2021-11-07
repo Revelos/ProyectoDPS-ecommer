@@ -131,7 +131,7 @@ const Login = ({ navigation }) => {
   return (
     <Background source={require('./../assets/img/fondo.jpg')}>
     <KeyboardAvoidingWrapper>
-    
+	<Text>Esto es una prueba</Text>    
       <StyledContainer>
         <StatusBar style="dark" />
         <InnerContainer>
