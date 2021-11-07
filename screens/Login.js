@@ -99,10 +99,13 @@ const Login = ({ navigation }) => {
       .then((result) => {
         const { type, user } = result;
         if (type == 'success') {
-          const { email, name, photoUrl } = user;
-          console.log(email);
-          console.log(name);
-          persistLogin({ email, name, photoUrl }, 'Google signin successful', 'SUCCESS');
+          const { id ,email, name, photoUrl } = user;
+          let id_usuario = id;
+          let nombre = name;
+          let correo = email;
+          console.log(correo);
+          console.log(nombre);
+          persistLogin({ id_usuario, correo, nombre, photoUrl }, 'Google signin successful', 'SUCCESS');
         } else {
           handleMessage('Google Signin was cancelled');
         }
@@ -131,7 +134,7 @@ const Login = ({ navigation }) => {
   return (
     <Background source={require('./../assets/img/fondo.jpg')}>
     <KeyboardAvoidingWrapper>
-	<Text>Esto es una prueba</Text>    
+    
       <StyledContainer>
         <StatusBar style="dark" />
         <InnerContainer>

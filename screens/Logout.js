@@ -16,6 +16,7 @@ const Logout = () => {
         setStoredCredentials("");
       })
       .catch((error) => console.log(error));
+    AsyncStorage.removeItem('carrito')
       return null;
   };
 

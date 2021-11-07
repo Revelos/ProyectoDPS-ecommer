@@ -21,7 +21,7 @@ const { primary, secondary, tertiary, darkLight, brand, green, red, gray } = Col
 export const StyledContainer = styled.View`
   flex: 1;
   padding: 25px;
-  padding-top: ${StatusBarHeight + 30}px;
+  padding-top: ${StatusBarHeight + 10}px;
  
   
 `;
@@ -31,7 +31,7 @@ export const InnerContainer = styled.View`
   flex: 1;
   align-items: center;
   background-color: rgba(60,60,60,0.3);
-  padding-top: ${StatusBarHeight + 30}px;
+  padding-top: ${StatusBarHeight + 10}px;
   
 `;
 
@@ -135,8 +135,14 @@ export const StyledInputLabel = styled.Text`
 `;
 
 export const LeftIcon = styled.View`
-  left: 15px;
+  left: 20px;
   top: 38px;
+  position: absolute;
+  z-index: 1;
+`;
+export const LeftIcons = styled.View`
+  left: 20px;
+  
   position: absolute;
   z-index: 1;
 `;
@@ -165,6 +171,34 @@ export const StyledButton = styled.TouchableOpacity`
     justify-content: center;
   `}
 `;
+
+export const ImageButton = styled.TouchableOpacity`
+  padding: 15px;
+  
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin-vertical: 5px;
+  height: 60px;
+
+    background-color: ${green};
+    
+  
+`;
+export const DeleteButton = styled.TouchableOpacity`
+  padding: 15px;
+  
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin-vertical: 5px;
+  height: 50px;
+
+    background-color: ${red};
+    
+  
+`;
+
 
 export const ButtonText = styled.Text`
   color: ${primary};

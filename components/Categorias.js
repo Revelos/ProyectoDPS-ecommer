@@ -13,90 +13,64 @@ import KeyboardAvoidingWrapper from './../components/KeyboardAvoidingWrapper';
 const DATA = [
   {
     title: "Mujeres",
-    data: ["Vestidos", "Blusas", "Conjuntos", "Zapatos"],
+    data: ["Pantalon", "Blusa", "Falda", "Short"],
   },
   {
     title: "Hombres",
-    data: ["Pantalones", "Camisas", "Trajes", "Zapatos"],
+    data: ["Pantalon", "Camisa", "Traje", "Zapatos"],
   },
   {
     title: "Niños",
-    data: ["Pantalones", "Camisas", "Trajes", "Zapatos"],
+    data: ["Pantalon", "Camisa", "Short", "Zapatos"],
+  },
+  {
+    title: "Niñas",
+    data: ["Vestidos", "Blusa", "Falda", "Zapatos"],
   },
 ];
+const Buscar = async (item,guardarresultado,categoria)=>{
+     
+      const url = `https://apiphpdps.000webhostapp.com/filtro.php?articulo=`+item+`&categoria=`+categoria;
+        
+        try {
+          const respuesta = await fetch(url);
+          const resul = await respuesta.json();
+       
+          guardarresultado(resul)
+           
+        } catch (error) {
+          console.log(error);
+        }
+    };
 
-const Categorias = () => {
-  const [isSelectedXS, setSelectionXS] = useState(false);
-  const [isSelectedS, setSelectionS] = useState(false);
-  const [isSelectedM, setSelectionM] = useState(false);
-  const [isSelectedL, setSelectionL] = useState(false);
+const Categorias = ({guardarresultado}) => {
+
   return (
+    
     <View style={styles.container}>
       <Text style={styles.sectionTitle}>Categorías</Text>
       <SectionList
         keyExtractor={(item, index) => index.toString()}
         sections={DATA}
-        renderItem={({ item }) => (
-        <ScrollView>
-          <TouchableOpacity style={styles.item}>
+        renderItem={({ item,index,section }) => (
+       
+          <TouchableOpacity style={styles.item} onPress={()=>Buscar(item,guardarresultado,section.title)}>
             <Text style={{ marginRight: 20, fontSize: 12 }}>{item}</Text>
           </TouchableOpacity>
-          </ScrollView>
+          
         )}
         renderSectionHeader={({ section }) => (
-        <ScrollView>
+        
           <View style={styles.titulo}>
             <Text style={{ fontSize: 12, fontWeight: "700" }}>
               {section.title}
             </Text>
           </View>
-          </ScrollView>
+          
         )}
       />
-      
-      <View>
-        <Text style={styles.separador}></Text>
-      </View>
-      <View style={styles.tallas}>
-      <ScrollView>
-        <View>
-          <Text style={{ fontSize: 15, fontWeight: "700" }}>Tallas</Text>
-        </View>
-        <View style={styles.checkboxContainer}>
-          <CheckBox
-            value={isSelectedXS}
-            onValueChange={setSelectionXS}
-            style={styles.checkbox}
-          />
-          <Text style={styles.label}>XS</Text>
-        </View>
-        <View style={styles.checkboxContainer}>
-          <CheckBox
-            value={isSelectedS}
-            onValueChange={setSelectionS}
-            style={styles.checkbox}
-          />
-          <Text style={styles.label}>S</Text>
-        </View>
-        <View style={styles.checkboxContainer}>
-          <CheckBox
-            value={isSelectedM}
-            onValueChange={setSelectionM}
-            style={styles.checkbox}
-          />
-          <Text style={styles.label}>M</Text>
-        </View>
-        <View style={styles.checkboxContainer}>
-          <CheckBox
-            value={isSelectedL}
-            onValueChange={setSelectionL}
-            style={styles.checkbox}
-          />
-          <Text style={styles.label}>L</Text>
-        </View>
-        </ScrollView>
-      </View>
     </View>
+
   );
 };
 
@@ -104,7 +78,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
     width: 120,
-    height: 570,
+    
     marginTop: 20,
     marginLeft: 8,
     borderRadius: 10,

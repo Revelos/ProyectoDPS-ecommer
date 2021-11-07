@@ -26,7 +26,7 @@ const Welcome = () => {
   // credentials context
   const { storedCredentials, setStoredCredentials } = useContext(CredentialsContext);
 
-  const { email , name, photoUrl, nombre,correo } = storedCredentials;
+  const { email , name, photoUrl, nombre,correo,nacimiento } = storedCredentials;
  console.log(storedCredentials);
 
   const AvatarImg = photoUrl
@@ -46,14 +46,13 @@ const Welcome = () => {
           <PageTitle1>Informacion Personal</PageTitle1>
           <SubTitle welcome={true}>{name || nombre}</SubTitle>
           <SubTitle welcome={true}>{email || correo}</SubTitle>
+          <SubTitle welcome={true}>{ nacimiento}</SubTitle>
 
           <StyledFormArea>
             <Avatar resizeMode="cover" source={AvatarImg} />
 
             <Line />
-            <StyledButton >
-              <ButtonText>Editar</ButtonText>
-            </StyledButton>
+           
           </StyledFormArea>
         </WelcomeContainer>
       </InnerContainers>

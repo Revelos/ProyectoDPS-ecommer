@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext,useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 
 // formik
@@ -49,41 +49,71 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 // credentials context
 import { CredentialsContext } from './../components/CredentialsContext';
 
-const Signup = ({ navigation }) => {
+const Signup = ({ route,navigation }) => {
   const [hidePassword, setHidePassword] = useState(true);
   const [show, setShow] = useState(false);
   const [date, setDate] = useState(new Date(2000, 0, 1));
   const [message, setMessage] = useState();
   const [messageType, setMessageType] = useState();
-
+  const [resultado, guardarresultado] = useState([]);
+  const [totalprice, settotal] = useState('');
   // Actual value to be sent
   const [dob, setDob] = useState();
+  const totalPrecio = route.params;  
+  
+  useEffect(() => {
 
-  const onChange = (event, selectedDate) => {
-    const currentDate = selectedDate || date;
-    setShow(false);
-    setDate(currentDate);
-    setDob(currentDate);
-  };
+    obtenerDatos();
 
+     navigation.addListener('focus',()=>{
+      obtenerDatos();
+      
+    })
+
+  }, [navigation]);
+
+  const obtenerDatos = async()=>{
+      try{
+        const nombreStorage = await AsyncStorage.getItem('carrito');
+        if(nombreStorage){
+          guardarresultado(JSON.parse(nombreStorage));
+         
+        }else{
+          console.log("esta vacio")
+        }
+      }catch(error){
+        console.log(error)
+      }
+    }
+    const limpiarCarrito = async()=>{
+      try{
+        await AsyncStorage.removeItem('carrito');
+        return true;
+      }catch(error){
+      return false;
+  }
+    }
     // credentials context
   const {storedCredentials, setStoredCredentials} = useContext(CredentialsContext);
-
+   const { id_usuario,email , name, photoUrl, nombre, correo } = storedCredentials;
+   
   // Form handling
   const handleSignup = (credentials, setSubmitting) => {
+    obtenerDatos()
+    
+    //const listaArticulos = [...resultado,credentials,totalPrecio];
     handleMessage(null);
-    const url = 'http://192.168.1.14/APILogin/apiregistro.php';
+    const url = 'https://apiphpdps.000webhostapp.com/factura.php';
     axios
-      .post(url, credentials,{headers:{ 'Content-Type':'application/json'}})
+      .post(url, {listaArticulos:resultado,usuario:credentials,total:totalPrecio},{headers:{ 'Content-Type':'application/json'}})
       .then((response) => {
         const result = response.data;
         const { status, message, data } = result;
-        console.log(result);
-        if (status !== 'SUCCESS') {
-          handleMessage(message, status);
-        } else {
-
-          persistLogin({ ...data[0] } ,message, status);
+        console.log(response)
+        let eliminar =  AsyncStorage.removeItem('carrito');
+        if(eliminar){
+          alert("La compra fue registrada con exito")
+          navigation.navigate('MisCompras')
         }
         setSubmitting(false);
       })
@@ -112,7 +142,7 @@ const Signup = ({ navigation }) => {
 
 
           <Formik
-            initialValues={{ name: '', email: '', dateOfBirth: '', password: '', confirmPassword: '' }}
+            initialValues={{ name: nombre, email: correo, direccion: '', tarjeta: '', password: '',id:id_usuario}}
             onSubmit={(values, { setSubmitting }) => {
               values = { ...values, dateOfBirth: dob };
               if (
@@ -139,6 +169,7 @@ const Signup = ({ navigation }) => {
                   onBlur={handleBlur('name')}
                   value={values.name}
                   icon="person"
+                  editable={false}
                 />
                 <MyTextInput
                   label="Correo Electronico"
@@ -149,23 +180,24 @@ const Signup = ({ navigation }) => {
                   value={values.email}
                   keyboardType="email-address"
                   icon="mail"
+                  editable={false}
                 />
                 <MyTextInput
                   label="Direccion de Entrega"
                   placeholder="Calle 3, Avenida Sur, San Marcos"
                   placeholderTextColor={darkLight}
-                  onChangeText={handleChange('name')}
-                  onBlur={handleBlur('name')}
-                  value={values.name}
+                  onChangeText={handleChange('direccion')}
+                  onBlur={handleBlur('direccion')}
+                  value={values.direccion}
                   icon="location"
                 />
                 <MyTextInput
                   label="Tajeta de Credito"
                   placeholder="XXX-XXXX-XXX"
                   placeholderTextColor={darkLight}
-                  onChangeText={handleChange('name')}
-                  onBlur={handleBlur('name')}
-                  value={values.name}
+                  onChangeText={handleChange('tarjeta')}
+                  onBlur={handleBlur('tarjeta')}
+                  value={values.tarjeta}
                   icon="credit-card"
                 />
                 <MyTextInput
@@ -181,7 +213,6 @@ const Signup = ({ navigation }) => {
                   hidePassword={hidePassword}
                   setHidePassword={setHidePassword}
                 />
-               
                 <MsgBox type={messageType}>{message}</MsgBox>
 
                 {!isSubmitting && (

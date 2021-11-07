@@ -9,15 +9,21 @@ import { StyleSheet, View, Text, Pressable,Button } from "react-native";
 // React Navigation
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createDrawerNavigator, DrawerContentScrollView,
+  DrawerItemList, } from "@react-navigation/drawer";
 // screens
 import Login from './../screens/Login';
 import Signup from './../screens/Signup';
 import Perfil from './../screens/Welcome';
-import Home from './../screens/Home';
+import Productos from '../screens/Productos';
+import Home from '../screens/Home';
+import Carrito from '../screens/Carrito';
+import MisCompras from '../screens/MisCompras';
 import Logout from './../screens/Logout';
-import Producto from './../screens/Producto';
+import DetalleProducto from './../screens/DetalleProducto';
 import FormCompra from './../screens/FormCompra';
+import  RegiProducto from './../screensAdmin/RegistroProducto';
+import  ListaProducto from './../screensAdmin/ListarProductos';
 // credentials context
 import { CredentialsContext } from './../components/CredentialsContext';
 import  Splash from './../components/splash';
@@ -26,6 +32,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import KeyboardAvoidingWrapper from './../components/KeyboardAvoidingWrapper';
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
+
 
 
 function Drawers() {
@@ -46,21 +53,34 @@ function Drawers() {
           },
           //headerRight:()=>(<FontAwesome name="sign-out" size={24} color="black" />),
           }} 
+        
           >
-        <Drawer.Screen name="Home" component={Home} options={{
+        <Drawer.Screen
+            name="Home"
+            component={Home}
+            options={{
+              drawerIcon: () => <FontAwesome name="home" size={24} color="black" />,
+            }}
+          />
+          <Drawer.Screen
+            name="Productos"
+            component={Productos}
+            options={{
+              drawerIcon: () => <FontAwesome name="tags" size={24} color="black" />,
+            }}
+            style={{display:'none'}}
+          />
+          
+          
+
+          <Drawer.Screen name="Carrito" component={Carrito} options={{
             drawerIcon: () => (
-              <FontAwesome name="home" size={24} color="black" />
+              <FontAwesome name="shopping-cart" size={24} color="black" />
             ),
           }}/>
-          <Drawer.Screen name="Producto" component={Producto} options={{
+          <Drawer.Screen name="MisCompras" component={MisCompras} options={{
             drawerIcon: () => (
               <FontAwesome name="bookmark" size={24} color="black" />
-            ),
-          }}
-          />
-          <Drawer.Screen name="FormCompra" component={FormCompra} options={{
-            drawerIcon: () => (
-              <FontAwesome name="money" size={24} color="black" />
             ),
           }}/>
           <Drawer.Screen name="Perfil" component={Perfil} options={{
@@ -68,6 +88,62 @@ function Drawers() {
               <FontAwesome name="user-circle" size={24} color="black" />
             ),
           }}/>
+          <Drawer.Screen name="Logout" component={Logout} options={{
+            drawerIcon: () => (
+              <FontAwesome name="sign-out" size={24} color="black" />
+            ),
+          }}/>
+          <Drawer.Screen name="FormCompra" component={FormCompra} 
+            options={{
+            drawerIcon: () => null,
+            drawerLabel: () => null
+            }}
+          />
+          <Drawer.Screen
+            name="DetalleProducto"
+            component={DetalleProducto}
+            options={{
+            drawerIcon: () => null,
+            drawerLabel: () => null
+            }}
+          />
+      </Drawer.Navigator>
+      </View>
+    </>
+  );
+}
+
+function Admin() {
+  return (
+    <>
+    <View style={{flex:1,marginTop:18}}>
+      <Drawer.Navigator 
+          initialRouteName="Home" 
+          screenOptions={{
+          headerTitleAlign: "center",
+          drawerStyle:{
+            backgroundColor: 'white',
+            width: 240
+          },
+          headerStyle:{
+            
+            backgroundColor:"white"
+          },
+          //headerRight:()=>(<FontAwesome name="sign-out" size={24} color="black" />),
+          }} 
+          >
+          <Drawer.Screen name="ListaProductos" component={ListaProducto} options={{
+            drawerIcon: () => (
+              <FontAwesome name="list" size={24} color="black" />
+            ),
+          }}/>
+          <Drawer.Screen name="RegistrarProducto" component={RegiProducto} options={{
+            drawerIcon: () => (
+              <FontAwesome name="plus-square" size={24} color="black" />
+            ),
+          }}/>
+
+          
           <Drawer.Screen name="Logout" component={Logout} options={{
             drawerIcon: () => (
               <FontAwesome name="sign-out" size={24} color="black" />
@@ -117,17 +193,29 @@ const RootStack = () => {
               headerBackTitle:'Login'
             }}
           >
-            {storedCredentials ? (
+
+              {storedCredentials ? (
+                storedCredentials.nivel==1?(
+              console.log(storedCredentials.nivel),
               
               <Stack.Screen
+                options={{
+                  headerTintColor:primary,
+                }}
+                name="Admin"
+                component={Admin}
+              />
+              ):(
+                  <Stack.Screen
                 options={{
                   headerTintColor:primary,
                 }}
                 name="Drawers"
                 component={Drawers}
               />
+              )
 
-            ) : (
+            ): (
               <>
                 <Stack.Screen name="SplashScreen" component={SplashScreen} />
                 <Stack.Screen name="Login" component={Login} />
