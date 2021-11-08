@@ -34,7 +34,7 @@ Al tener nuestra aplicacion en nuestro equipo local abriremos una ventana CMD y 
 * **Rodrigo Enrique Flores Velásquez     --FV180290** 
 
 ## Enlaces de interes🔗
-* [Enlace a Mockups] https://drive.google.com/file/d/1SJrs0U0ZY5PJBlEhU8EUmgZl9NrirRSq/view?usp=sharing
+* [Enlace a Mockups]  https://drive.google.com/file/d/1SJrs0U0ZY5PJBlEhU8EUmgZl9NrirRSq/view?usp=sharing
 
 * [Enlace a Trello] https://trello.com/b/dMVFNLue
 
