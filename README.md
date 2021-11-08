@@ -19,7 +19,7 @@ El siguiente proyecto consistirá en la creación de una aplicación para una ti
 * **Rodrigo Enrique Flores Velásquez** 
 
 ## Enlaces de interes🔗
-* [Enlace a Mockups] https://drive.google.com/file/d/1iGqeKCg0t6GMWw64v_xlqvHGkEQlwhkp/view?usp=drivesdk
+* [Enlace a Mockups] https://drive.google.com/file/d/1SJrs0U0ZY5PJBlEhU8EUmgZl9NrirRSq/view?usp=sharing
 
 * [Enlace a Trello] https://trello.com/b/dMVFNLue
 
