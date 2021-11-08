@@ -167,7 +167,7 @@ const obtenerDatos = async()=>{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-   
+    alignItems: "center",
   },
   searchbar: {
     width: "100%",
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
     flex:1,
     backgroundColor: 'rgba(60,60,60,0.3)',
     width:300,
-    marginLeft:35
+    alignItems: "center",
   },
    containers: {
     flex: 1,
