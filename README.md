@@ -41,7 +41,7 @@ Al tener nuestra aplicacion en nuestro equipo local abriremos una ventana CMD y 
 
 * [Enlace a Manual_Usuario] https://drive.google.com/file/d/1l1bEWc_2r_HvgYhUU2vD1ZL5ozPFROSZ/view?usp=sharing
 
-* [Enlace a Manual_Técnico] https://mega.nz/file/4dcVmarD#xK0lPI_g1y6O8MHhfhIMu7YDF0r6UlXZ35I9pQUfp9g
+* [Enlace a Manual_Técnico] https://www.canva.com/design/DAEs9UFwBHk/6gN_tghNUXf7lWklNXe8SA/view?utm_content=DAEs9UFwBHk&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
 
 
 ## Licencia 📄
