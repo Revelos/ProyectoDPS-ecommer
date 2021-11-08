@@ -39,13 +39,10 @@ Al tener nuestra aplicacion en nuestro equipo local abriremos una ventana CMD y 
 * [Enlace a Trello] https://trello.com/b/dMVFNLue
 
 
-* [Enlace a Manual_Usuario] https://mega.nz/file/xUVVnSbL#V_2M9gHeah9RPp58JWJGOhBaW3Q-X-t96MSMDwZuiVc
+* [Enlace a Manual_Usuario] https://drive.google.com/file/d/1l1bEWc_2r_HvgYhUU2vD1ZL5ozPFROSZ/view?usp=sharing
 
 * [Enlace a Manual_Técnico] https://mega.nz/file/4dcVmarD#xK0lPI_g1y6O8MHhfhIMu7YDF0r6UlXZ35I9pQUfp9g
 
-## MANUALES FASE_3.
-* [Enlace a Manual_Técnico] https://mega.nz/file/hNsCyJ4a#3crwhzn0n8DtfFskUKboWRH6qLNjb9MxV166G3t3vTs
-* [Enlace a Manual_Usuario] https://mega.nz/file/kc0UyCxS#wrcGOhMC53AA5n_l3-VFEwk3m6Fl4sAVDKaeWagvdqU
 
 ## Licencia 📄
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">licencia de Creative Commons Reconocimiento-NoComercial 4.0 Internacional</a>.
